@@ -1,34 +1,21 @@
-#!/bin/bash
-
-name="$1"
-surname="$2"
-birth="$3"
-file="$4"
-
-#if [ -z "${name]" ]; then
-#   echo "The name is missing"
-#   read -p "Give me your name:" name
-
-if [ $# -ne 4 ]; then
-   echo "You need to provide: $0 name surname year_of_birth file_name.txt"
-   exit 1
-fi
-
-echo "Hello $name $surname!"
-age=$(($(date +%Y) - birth))
-echo "You are $age old!"
-
-factorial(){
-n="$1"
-if [ "$n" -eq 0 ]; then
-   echo 1
-else
-   echo "$((n * $(factorial "$((n-1))")))"
-fi
-}
-
-result=$(factorial $age)
-
-echo "$name, $surname, $birth, $age, $result " >> "$file" 
-
-exit
+show commands
+git commit - tworzenie commit
+git branch name_branch - tworzenie nowej gałęzi 
+git checkout branch_name - przełączenie się na inną gałąź
+(new version) git switch branch_name
+git checkout -b branch_name - utowrzenie nowej gałęzi i przełączenie się na nią
+git merge branch_name - łączenie dwóch gałęzi w nowego commita
+git rebase branch_name - łączenie dwóch gałęzi w nową (fajniej)
+git log
+^ - poruszanie się wstecz o jeden commit (git checkout main^)
+~<num> - poruszanie się wstecz o ileś commitów 
+git branch -f main HEAD~3
+git reset (np.HEAD^)- odwrócenie zmian poprzez przesunięcie referencji wstecz do starszego commita
+git revert HEAD - globalne git reset
+git cherry-pick (<commit1> <commit2>)
+git rebase -i (np.HEAD~3) - interaktywne zarządzanie commitami gita
+git commit --amend
+git tag nazwa #HASH - otagowanie gałęzi w gitcie (kamienie milowe w aplikacji)
+git describe <ref> - (ref - cokolwiek do czego może odnieść się git), pozwala zorientować się w którym miejscu na "drzewie" git się znajdujemy 
+git bisec - 
+git checkout HEAD~^2~1
