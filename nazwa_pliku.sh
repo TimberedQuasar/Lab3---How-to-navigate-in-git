@@ -17,5 +17,17 @@ git rebase -i (np.HEAD~3) - interaktywne zarządzanie commitami gita
 git commit --amend
 git tag nazwa #HASH - otagowanie gałęzi w gitcie (kamienie milowe w aplikacji)
 git describe <ref> - (ref - cokolwiek do czego może odnieść się git), pozwala zorientować się w którym miejscu na "drzewie" git się znajdujemy 
-git bisec - 
 git checkout HEAD~^2~1
+git clone - pozwala tworzyć lokalne kopie zdalnych repozytoriów
+git fetch - pobieranie danych ze zdalnego repozytorium (pobiera niezbędne pliki ale nie zmienia lokalnych/synchronizuje)
+git pull - synchronizacja lokalnego repozyturium ze zdalną
+git push - przesyłanie i aktualizowanie zdalnego repozytorium z lokalnych plików
+git pull --rebase
+local branch "main" set to track remote branch "o/main"
+git checkout -b totallyNotMain o/main - ustawienia zdalnego śledzenia dla gałęzi "totallyNotMain"
+git branch -u o/main foo - -//-
+git push <remote> <place> - określenie z której gałęzi lokalnej git ma przesłać commity
+git push origin <source>:<destination> - określenie z której gałęzi lokalnej git ma przesłać commity na daną gałąź zdalną 
+git fetch <remote> <place> - określenie z której gałęzi zdalnej git ma pobrać commity 
+git fetch origin :name - tworzenie nowego branch
+git push origin :name - usuwanie branch
